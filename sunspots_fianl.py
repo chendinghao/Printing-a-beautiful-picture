@@ -12,8 +12,12 @@ for line in urlopen(URL).readline():
     if not line.isspace() and not line[0] in COMMENT_CHAR:
         data.append(float(n) for n in line.split())
 
-pred = [row[2] for row in data]
+
+"""
+最精妙的就是，在[]里面直接来一个循环以加入到数组中去
+"""
 high = [row[3] for row in data]
+pred = [row[2] for row in data]
 low = [row[4] for row in data]
 times = [row[0] + row[1]/12.0 for row in data]
 
